@@ -1,13 +1,9 @@
-CC = gcc
 CFLAGS = -O2 -std=c11
 
-TARGET = sober_freeze
-SRC = main.c
+all: sober_freeze
 
-all: $(TARGET)
-
-$(TARGET): $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -o $(TARGET)
+sober_freeze: main.c
+	gcc $(CFLAGS) main.c -o sober_freeze
 
 clean:
-	rm -f $(TARGET)
+	rm -f sober_freeze
